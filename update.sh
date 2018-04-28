@@ -1,8 +1,8 @@
 #!/bin/bash
-rm -r PUBG-Radar
+rm -r Gaydar
 
-git clone https://github.com/zecjy/PUBG-Radar
-cd PUBG-Radar
+git clone https://github.com/EmberVulpix/Gaydar
+cd Gaydar
 
 PS3="Which map do you want to use? "
 options=("4k Map" "8k Map")
@@ -35,7 +35,9 @@ do
     esac
 done
 
-mvn -T 1C clean verify install
+cores=$(nproc)
+
+mvn -T "$cores"C clean verify install
 
 cd ..
 
